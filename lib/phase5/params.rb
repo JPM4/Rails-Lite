@@ -50,7 +50,6 @@ module Phase5
         end
 
         @params.deep_merge!(hash)
-        puts "Params: #{@params}"
       end
     end
 

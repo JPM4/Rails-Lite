@@ -1,3 +1,5 @@
+require 'byebug'
+
 module Phase6
   class Route
     attr_reader :pattern, :http_method, :controller_class, :action_name
@@ -22,8 +24,8 @@ module Phase6
     # use pattern to pull out route params (save for later?)
     # instantiate controller and call controller action
     def run(req, res)
-      regex = Regexp.new '/.*/(?<id>\d+)'
-      matches = regex.match(req.path)
+      # regex = Regexp.new '/.*/(?<id>\d+)'
+      matches = @pattern.match(req.path)
       route_params = {}
       if matches
         names = matches.names
