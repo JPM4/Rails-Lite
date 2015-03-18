@@ -14,6 +14,7 @@ module Phase5
       @params = {}
       parse_www_encoded_form(req.query_string) if req.query_string
       parse_www_encoded_form(req.body) if req.body
+
       route_params.each do |k, v|
         @params[k] = v
       end
